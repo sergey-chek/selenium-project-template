@@ -18,9 +18,3 @@ def driver():
 
     # Quit the WebDriver instance
     driver.quit()
-
-
-
-
-
-

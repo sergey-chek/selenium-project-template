@@ -1,7 +1,11 @@
 """
-These tests cover Feature #1. Searching on google.com
-    Any additional information about functionality...
+These tests cover searching on Google (for example...)
+Any additional information about functionality...
 """
+
+from pages.google_search_page import GoogleSearchPage
+from pages.google_result_page import GoogleResultPage
+
 
 def test_basic_search(driver):
     """
@@ -12,21 +16,30 @@ def test_basic_search(driver):
             And the search result links in lower case contain "python"
     """
 
-    # Given the Google page is displayed
-    # TODO
+    search_page = GoogleSearchPage(driver)
+    result_page = GoogleResultPage(driver)
+    phrase = "python"
 
+    # Given the Google page is displayed
     # When the user searches for "python"
-    # TODO
+    search_page.load_page()
+    search_page.search_phrase(phrase)
 
     # Then the search result title contains "python"
-    # TODO
+    assert phrase in result_page.get_page_title()
 
     # And the search result query is "python"
-    # TODO
+    assert phrase == result_page.get_search_query_text()
 
     # And the search result links in lower case contain "python"
-    # TODO
+    counter = 0
+    for title in result_page.get_result_link_titles():
+        if phrase.lower() in title.lower():
+            counter += 1
+    assert counter > 0
 
+    # delete raise when everything will be ready
+    # TODO
     raise NotImplementedError
 
 
@@ -41,24 +54,33 @@ def test_search_on_result_page(driver):
             And the search result links in lower case contain "java"
     """
 
+    search_page = GoogleSearchPage(driver)
+    result_page = GoogleResultPage(driver)
+    phrase_python = "python"
+    phrase_java = "java"
+
     # Given the Google page is displayed
     # Given the user searches for "python" and presses Enter
     # Given the search result page is displayed
-    # TODO
+    search_page.load_page()
+    search_page.search_phrase(phrase_python)
 
-    # When the user searches for "java" on the search result page
-    # TODO
+    # When the user searches for "java" on the result page
+    result_page.search_phrase(phrase_java)
 
     # Then the search result title contains "java"
-    # TODO
+    assert phrase_java in result_page.get_page_title()
 
     # And the search result query is "java"
-    # TODO
+    assert phrase_java == result_page.get_search_query_text()
 
     # And the search result links in lower case contain "java"
+    counter = 0
+    for title in result_page.get_result_link_titles():
+        if phrase_java.lower() in title.lower():
+            counter += 1
+    assert counter > 0
+
+    # delete raise when everything will be ready
     # TODO
-
     raise NotImplementedError
-
-
-

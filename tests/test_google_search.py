@@ -3,11 +3,12 @@ These tests cover searching on Google (for example...)
 Any additional information about functionality...
 """
 
+import pytest
 from pages.google_search_page import GoogleSearchPage
 from pages.google_result_page import GoogleResultPage
 
-
-def test_basic_search(driver):
+@pytest.mark.parametrize('phrase', ['python', 'java', 'ruby', 'javascript', 'abap'])
+def test_basic_search(driver, phrase):
     """
     Given the Google page is displayed
     When the user searches for "python"
@@ -18,7 +19,6 @@ def test_basic_search(driver):
 
     search_page = GoogleSearchPage(driver)
     result_page = GoogleResultPage(driver)
-    phrase = "python"
 
     # Given the Google page is displayed
     # When the user searches for "python"

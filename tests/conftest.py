@@ -27,6 +27,7 @@ def driver(config):
         elif config['browser'] == 'Headless Chrome':
             browser_options = selenium.webdriver.ChromeOptions()
             browser_options.headless = True
+            browser_options.add_experimental_option('excludeSwitches', ['enable-logging'])
             driver = selenium.webdriver.Chrome(options=browser_options)
         else:
             raise Exception(f'The browser "{config["browser"]}" is not supported')

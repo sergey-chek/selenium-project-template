@@ -8,7 +8,7 @@ from selenium.webdriver.common.keys import Keys
 
 
 class GoogleResultPage:
-    """The page object for a search result page"""
+    """The page object for a Google search result page"""
 
     SEARCH_FIELD_LOCATOR = (By.CSS_SELECTOR, 'input.gsfi')
     RESULT_LINKS_LOCATOR = (By.TAG_NAME, 'h3')

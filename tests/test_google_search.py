@@ -29,7 +29,7 @@ def test_basic_search(driver):
     assert phrase in result_page.get_page_title()
 
     # And the search result query is "python"
-    assert phrase == result_page.get_search_query_text()
+    assert phrase == result_page.get_search_field_text()
 
     # And the search result links in lower case contain "python"
     counter = 0
@@ -37,10 +37,6 @@ def test_basic_search(driver):
         if phrase.lower() in title.lower():
             counter += 1
     assert counter > 0
-
-    # delete raise when everything will be ready
-    # TODO
-    raise NotImplementedError
 
 
 def test_search_on_result_page(driver):
@@ -72,7 +68,7 @@ def test_search_on_result_page(driver):
     assert phrase_java in result_page.get_page_title()
 
     # And the search result query is "java"
-    assert phrase_java == result_page.get_search_query_text()
+    assert phrase_java == result_page.get_search_field_text()
 
     # And the search result links in lower case contain "java"
     counter = 0
@@ -80,7 +76,3 @@ def test_search_on_result_page(driver):
         if phrase_java.lower() in title.lower():
             counter += 1
     assert counter > 0
-
-    # delete raise when everything will be ready
-    # TODO
-    raise NotImplementedError

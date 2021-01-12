@@ -7,31 +7,32 @@ import pytest
 from pages.google_search_page import GoogleSearchPage
 from pages.google_result_page import GoogleResultPage
 
+
 @pytest.mark.parametrize('phrase', ['python', 'java', 'ruby', 'javascript', 'abap'])
 def test_basic_search(driver, phrase):
     """
     Given the Google page is displayed
-    When the user searches for "python"
-        Then the search result title contains "python"
-            And the search result query is "python"
-            And the search result links in lower case contain "python"
+    When the user searches for "phrase"
+        Then the search result title contains "phrase"
+            And the search result query is "phrase"
+            And the search result links in lower case contain "phrase"
     """
 
     search_page = GoogleSearchPage(driver)
     result_page = GoogleResultPage(driver)
 
     # Given the Google page is displayed
-    # When the user searches for "python"
+    # When the user searches for "phrase"
     search_page.load_page()
     search_page.search_phrase(phrase)
 
-    # Then the search result title contains "python"
+    # Then the search result title contains "phrase"
     assert phrase in result_page.get_page_title()
 
     # And the search result query is "python"
     assert phrase == result_page.get_search_field_text()
 
-    # And the search result links in lower case contain "python"
+    # And the search result links in lower case contain "phrase"
     counter = 0
     for title in result_page.get_result_link_titles():
         if phrase.lower() in title.lower():

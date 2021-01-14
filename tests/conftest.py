@@ -34,14 +34,14 @@ def driver(config):
     except KeyError:
         raise Exception('There is no "browser" parameter in the config file')
 
-    # Wait if there is such a parameter in the config file
+    # Define implicit wait time
     try:
         if isinstance(config['implicit_wait'], int) and (config['implicit_wait'] > 0):
             driver.implicitly_wait(config['implicit_wait'])
         else:
             raise Exception('The "implicit_wait" parameter is incorrect')
     except KeyError:
-        pass  # Continue without waiting
+        pass  # Continue without implicit wait time
 
     # Return WebDriver instance
     yield driver

@@ -1,5 +1,5 @@
 """
-These tests cover searching on Google (for example...)
+These tests cover searching on Google.
 Any additional information about functionality...
 """
 

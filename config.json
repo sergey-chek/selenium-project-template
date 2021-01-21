@@ -1,5 +1,0 @@
-{
-  "browser": "Headless Chrome",
-  "implicit_wait": 10,
-  "screenshots_folder_path": ""
-}

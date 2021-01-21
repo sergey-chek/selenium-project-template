@@ -34,4 +34,4 @@ class Screenshot:
         if self.driver.is_screenshot_activated:
             self._create_subfolder()
             file_path = os.path.join(self.screenshots_folder_path, self.subfolder_name, self.file_name)
-            self.driver.save_screenshots(file_path)
+            self.driver.save_screenshot(file_path)

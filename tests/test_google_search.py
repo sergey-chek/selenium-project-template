@@ -6,6 +6,7 @@ Any additional information about functionality...
 import pytest
 from pages.google_search_page import GoogleSearchPage
 from pages.google_result_page import GoogleResultPage
+from utils.screenshot import Screenshot
 
 
 @pytest.mark.parametrize('phrase', ['python', 'java', 'ruby', 'javascript', 'abap'])
@@ -39,6 +40,8 @@ def test_basic_search(driver, phrase):
             counter += 1
     assert counter > 0
 
+    Screenshot(driver, f'test_basic_search-{phrase}').save()
+
 
 def test_search_on_result_page(driver):
     """
@@ -62,8 +65,12 @@ def test_search_on_result_page(driver):
     search_page.load_page()
     search_page.search_phrase(phrase_python)
 
+    Screenshot(driver, 'test_search_on_result_page').save()
+
     # When the user searches for "java" on the result page
     result_page.search_phrase(phrase_java)
+
+    Screenshot(driver, 'test_search_on_result_page').save()
 
     # Then the search result title contains "java"
     assert phrase_java in result_page.get_page_title()

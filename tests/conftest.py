@@ -57,7 +57,7 @@ def driver(config, request):
         else:
             raise Exception('Invalid path in the config file (screenshots_folder_path).')
     else:
-        raise Exception('Invalid parameter --screen (y/n).')
+        raise Exception('Invalid value for the parameter --screen (y/n).')
 
     # Return WebDriver instance -------------------------------------------------------------------------------------
     yield driver

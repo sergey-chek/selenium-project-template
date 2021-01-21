@@ -1,6 +1,5 @@
-"""
-Shared fixtures for project.
-"""
+"""Shared fixtures for project."""
+
 import pytest
 import selenium.webdriver
 import json

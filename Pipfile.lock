@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "e4bf2e9616c7d6dc95cad6bb3493ccaf0b3d43756354d4ff730cc55f3eb46db7"
+            "sha256": "a5b93b16c5bdf33c61a1e0bfa889240175a7e35ca60c613d8ad1fca7116a6382"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -63,6 +63,14 @@
             ],
             "version": "==1.1.1"
         },
+        "keyring": {
+            "hashes": [
+                "sha256:1746d3ac913d449a090caf11e9e4af00e26c3f7f7e81027872192b2398b98675",
+                "sha256:4be9cbaaaf83e61d6399f733d113ede7d1c73bc75cb6aeb64eee0f6ac39b30ea"
+            ],
+            "index": "pypi",
+            "version": "==21.8.0"
+        },
         "packaging": {
             "hashes": [
                 "sha256:24e0da08660a87484d1602c30bb4902d74816b6985b93de36926f5bc95741858",
@@ -118,6 +126,14 @@
             ],
             "index": "pypi",
             "version": "==2.2.0"
+        },
+        "pywin32-ctypes": {
+            "hashes": [
+                "sha256:24ffc3b341d457d48e8922352130cf2644024a4ff09762a2261fd34c36ee5942",
+                "sha256:9dc2d991b3479cc2df15930958b674a48a227d5361d413827a4cfd0b5876fc98"
+            ],
+            "markers": "sys_platform == 'win32'",
+            "version": "==0.2.0"
         },
         "selenium": {
             "hashes": [

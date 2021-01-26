@@ -138,3 +138,6 @@ dmypy.json
 
 # Reports
 .reports
+
+# Debug
+debug.py
